@@ -313,7 +313,7 @@ LLDSPEC bool_t gdisp_lld_init(GDisplay *g) {
 		release_bus(g);
 
 		/* Shift buffer up a font line.*/
-		for (int i = 0; i < SSD1306_PAGE_WIDTH*(GDISP_SCREEN_HEIGHT/8-1); i++) {
+		for (int i = 0; i < SSD1306_PAGE_WIDTH*(GDISP_SCREEN_HEIGHT/8-2); i++) {
 			if(i % SSD1306_PAGE_WIDTH){
 				RAM(g)[i]  = RAM(g)[i+SSD1306_PAGE_WIDTH*(fHeight/8)] >> fHeight % 8;
 				RAM(g)[i] |= RAM(g)[i+SSD1306_PAGE_WIDTH*(fHeight/8 + 1)] << (8 - fHeight%8);
